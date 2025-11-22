@@ -140,3 +140,11 @@ sequenceDiagram
         end
     end
 ```
+
+## Docker 실행 (지원 진행 중)
+- Docker와 Docker Compose가 설치되어 있어야 합니다.
+- `cd docker && ./docker-compose.sh` 실행 시 RabbitMQ/Redis/MainServer/MainServerConsumer가 한 번에 빌드·기동됩니다.
+- UserClient는 `127.0.0.1:9876`으로 접속해 테스트하세요(컨테이너 내부 포트는 `9876`).
+- 트리플릿 강제 설정이 필요하면 `VCPKG_TRIPLET=arm64-linux docker compose -f docker/docker-compose.yml up --build -d`처럼 환경 변수를 덮어쓸 수 있습니다.
+- 중단은 `docker compose -f docker/docker-compose.yml down`으로 정리합니다.
+- 현재 Docker 지원은 진행 중이며, 환경에 따라 추가 조정이 필요할 수 있습니다.
